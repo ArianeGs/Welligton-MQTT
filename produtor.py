@@ -1,3 +1,9 @@
 import pika
-credentials = pika.PlainCredentials('username', 'password')
-parameters = pika.ConnectionParameters(credentials=credentials)
+
+    connection_parameters = pika.ConnectionParameters('localhost')
+    
+    connection = pika.BlockingConnection(connection_parameters)
+
+    channel = connection.channel()
+    
+    channel.queue_declare(queue='letterbox')

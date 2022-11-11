@@ -21,13 +21,13 @@ pip3 install pika
 ## Visual Studio Code config
 
 Press (Ctrl + Shift + P) and open the command pallet
-![vscode command pallet img](https://imgur.com/hAOpxNP)
+![Alt text](https://imgur.com/hAOpxNP "vscode command pallet img")
 
 Into the command pallet type: Python: Select Interpreter
-![vscode command pallet img](https://imgur.com/a/KHasCuD)
+![Alt text](https://imgur.com/a/KHasCuD "vscode command pallet img")
 
 Select the + option
-![vscode command pallet img](https://imgur.com/2SxFmEU)
+![Alt text](https://imgur.com/2SxFmEU "vscode command pallet img")
 
 Navigate to your 'venv' project folder and select the python.exe and yout project is ready to go.
 

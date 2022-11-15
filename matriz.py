@@ -1,4 +1,5 @@
 import pika
+import sys
 
 from pika.exchange_type import ExchangeType
 
@@ -10,10 +11,16 @@ channel = connection.channel()
 
 channel.exchange_declare(exchange='pubsub', exchange_type=ExchangeType.fanout)
 
-message = "Ola! Eu quero fazer o broadcast desta menssagem:"
+for i in range(5):
+    message = ' '.join(sys.argv[1:]) or input('Informe uma mensagem as lavanderias:')
 
-channel.basic_publish(exchange='pubsub', routing_key='', body=message)
+    if(message != "Send"):
+        channel.basic_publish(exchange='',
+                            routing_key='hello',
+                            body=message)
+        print(" [x] Sent %r" % message)
 
-print(f"menssagem enviada: {message}")
-
+        channel.basic_publish(exchange='pubsub', routing_key='', body=message)
+    else:
+        break
 connection.close()

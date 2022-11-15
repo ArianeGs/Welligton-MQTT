@@ -3,7 +3,7 @@ import pika
 from pika.exchange_type import ExchangeType
 
 def on_message_received(ch, method, properties, body):
-    print(f'03 - Lavanderia Madeixas - Nova menssagem recebida: {body}')
+    print(f'03 - Lavanderia Madeixas - Nova mensagem recebida: {body}')
     
 connection_parameters = pika.ConnectionParameters('localhost')
 
@@ -19,6 +19,6 @@ channel.queue_bind(exchange='pubsub', queue=queue.method.queue)
 
 channel.basic_consume(queue=queue.method.queue, auto_ack=True, on_message_callback=on_message_received)
 
-print('A Matriz enviou uma menssagem.')
+print('A Matriz enviou uma mensagem.')
 
 channel.start_consuming()

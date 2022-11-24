@@ -1,4 +1,4 @@
-import pika as py
+import os, pika as py
 
 from pika.exchange_type import ExchangeType
 
@@ -6,9 +6,14 @@ from pika.exchange_type import ExchangeType
 def on_message_received(ch, method, properties, body):
     print(f'06 - Lavanderia Nossa Senhora - Nova mensagem recebida: {body}')
     
-connection_parameters = py.ConnectionParameters('localhost')
 
-connection = py.BlockingConnection(connection_parameters)
+#conexão com o cloudAMQP
+connection_parameters =  os.environ.get('CLOUDAMQP_URL', 'amqps://sxhqckdt:ZidtJPJ9TH5DSpfCUPV_f8GLOJMqN0Qc@beaver.rmq.cloudamqp.com/sxhqckdt')
+params = py.URLParameters(connection_parameters)
+
+#Conexão Bloqueante
+connection = py.BlockingConnection(params)
+
 channel = connection.channel()
 
 # realizar a conexão

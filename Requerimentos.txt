@@ -1,0 +1,13 @@
+O trabalho apresentado ao rendimento da nota da A3, Unidade Curricular de Sistemas Distribuídos, 
+do curso  de Ciencia da Computação da Universidade de Salvador (Unifacs), 2022.2. Possui requisitos
+para execução, que serão descritos a seguir:
+
+1. As filas de mensagens utilizam o software em nuvem AMQP (https://www.cloudamqp.com/), recomendado pelo professor;
+2. Linguagem Python (3.10);
+3. Biblioteca 'pika', informando a instalação do ReadMe do repositório no github, 'sys', e 'os';
+
+Obs.: Como não existe uma forma de deixar o AMQP público para todos visualizarem,
+pode ser feita a instalação na máquina de acordo com o sistema operacional ou ambiente desejado, 
+link de instruções: https://www.rabbitmq.com/download.htm
+segue uma playlist dos vídeos mostrando o programa em execução: 
+https://www.youtube.com/watch?v=enrwjheZdME&list=PL4ln7pSZXESXHkzhpPnXp4IMLN29lJR7r

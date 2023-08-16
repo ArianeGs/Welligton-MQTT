@@ -1,4 +1,4 @@
-import pika as py
+import os, pika as py
 
 from pika.exchange_type import ExchangeType
 
